@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 320px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: lightgray;
+  margin: auto;
+  margin-top: 25%;
+  display: grid;
+}
