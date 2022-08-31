@@ -7,11 +7,45 @@ body {
 }
 #container {
   width: 320px;
-  height: 500px;
+  height: 450px;
   border: 1px solid black;
   border-radius: 10px;
-  background-color: lightgray;
+  background-color: darkgray;
   margin: auto;
   margin-top: 25%;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.7fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+.grid-item {
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#output{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  text-align: end;
+  padding: 15px;
+}
+#lower-output{
+  font-weight: bold;
+  font-size: 40px;
+}
+#clear-btn{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: pink;
+}
+#delete-btn{
+  grid-column-start: 3;
+  grid-column-end: 5;
+  background-color: skyblue;
 }
