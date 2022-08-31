@@ -29,6 +29,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.buttons:active{
+  background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
 #output{
   grid-column-start: 1;
   grid-column-end: 5;
