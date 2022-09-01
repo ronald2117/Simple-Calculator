@@ -14,4 +14,6 @@ const numZeroButton = document.querySelector('#num-0-btn');
 const equalButton = document.querySelector('#equal-btn');
 const addButton = document.querySelector('#add-btn');
 const allButtons = document.querySelectorAll('.buttons');
-console.log(allButtons)
+const upperOutput = document.querySelector('#upper-output');
+const lowerOutput = document.querySelector('#lower-output');
+
