@@ -15,7 +15,7 @@ body {
   margin-top: 25%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1.7fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 25% 1fr 1fr 1fr 1fr 1fr;
   gap: 10px;
   padding: 20px;
 }
@@ -37,10 +37,16 @@ body {
   grid-column-end: 5;
   text-align: end;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#upper-output{
+  font-size: 130%
 }
 #lower-output{
   font-weight: bold;
-  font-size: 40px;
+  font-size: 50px;
 }
 #clear-btn{
   grid-column-start: 1;
