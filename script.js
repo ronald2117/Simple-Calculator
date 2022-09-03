@@ -6,6 +6,7 @@ setInterval(function displayOutputValues() {
   upperOutput.innerHTML = upperOutputValue;
 }, 10)
 
+//buttons reference
 const clearButton = document.querySelector('#clear-btn');
 const deleteButton = document.querySelector('#delete-btn');
 const numSevenButton = document.querySelector('#num-7-btn');
@@ -27,5 +28,21 @@ const addButton = document.querySelector('#add-btn');
 const allButtons = document.querySelectorAll('.buttons');
 const upperOutput = document.querySelector('#upper-output');
 const lowerOutput = document.querySelector('#lower-output');
+const numberButton = document.querySelectorAll('.num-btn')
 
+//displaying numbers on lower output
+for(let i = 0; i < numberButton.length; i++){
+  numberButton[i].addEventListener('click', () => {
+  if (lowerOutputValue != '0' && lowerOutputValue.length < 80) {
+    lowerOutputValue += numberButton[i].innerHTML;
+  } else if(lowerOutputValue == 0) {
+    lowerOutputValue = numberButton[i].innerHTML;
+  }
+})
+}output
+
+//clear output
+clearButton.addEventListener('click',() => {
+  lowerOutputValue = '0'
+})
 

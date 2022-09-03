@@ -46,7 +46,7 @@ body {
 }
 #lower-output{
   font-weight: bold;
-  font-size: 50px;
+  font-size: 35px;
 }
 #clear-btn{
   grid-column-start: 1;
