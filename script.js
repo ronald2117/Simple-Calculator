@@ -1,48 +1,32 @@
-// For displaying output
-var upperOutputValue = '';
-var lowerOutputValue = '0'; //max: 9
-setInterval(function displayOutputValues() {
-  lowerOutput.innerHTML = lowerOutputValue;
-  upperOutput.innerHTML = upperOutputValue;
-}, 10)
-
-//buttons reference
 const clearButton = document.querySelector('#clear-btn');
 const deleteButton = document.querySelector('#delete-btn');
-const numSevenButton = document.querySelector('#num-7-btn');
-const numEightButton = document.querySelector('#num-8-btn');
-const numNineButton = document.querySelector('#num-9-btn');
-const divideButton = document.querySelector('#divide-btn');
-const numFourButton = document.querySelector('#num-4-btn');
-const numFiveButton = document.querySelector('#num-5-btn');
-const numSixButton = document.querySelector('#num-6-btn');
-const multiplyButton = document.querySelector('#multiply-btn');
-const numOneButton = document.querySelector('#num-1-btn');
-const numTwoButton = document.querySelector('#num-2-btn');
-const numThreeButton = document.querySelector('#num-3-btn');
-const subtractButton = document.querySelector('#subtract-btn')
-const pointButton = document.querySelector('#point-btn');
-const numZeroButton = document.querySelector('#num-0-btn');
 const equalButton = document.querySelector('#equal-btn');
-const addButton = document.querySelector('#add-btn');
-const allButtons = document.querySelectorAll('.buttons');
-const upperOutput = document.querySelector('#upper-output');
-const lowerOutput = document.querySelector('#lower-output');
-const numberButton = document.querySelectorAll('.num-btn')
+const previousOperandTextElement = document.querySelector('#upper-output');
+const currentOperandTextElement = document.querySelector('#lower-output');
+const numberButton = document.querySelectorAll('.num-btn');
+const operatorButton = document.querySelectorAll('.operator-btn');
 
-//displaying numbers on lower output
-for(let i = 0; i < numberButton.length; i++){
-  numberButton[i].addEventListener('click', () => {
-  if (lowerOutputValue != '0' && lowerOutputValue.length < 80) {
-    lowerOutputValue += numberButton[i].innerHTML;
-  } else if(lowerOutputValue == 0) {
-    lowerOutputValue = numberButton[i].innerHTML;
+class Calculator {
+  constructor (currentOperandTextElement, previousOperandTextElement){
+    this.previousOperandTextElement = previousOperandTextElement;
+    this.currentOperandTextElement = currentOperandTextElement;
+    this.operation = '';
   }
-})
-}output
+  updateDisplay() {
+    this.currentOperandTextElement.innerText = this.currentOperand;
+  }
+  appendNumber(number){
+    this.currentOperand = this.currentOperand + number;
+  }
+  
+}
 
-//clear output
-clearButton.addEventListener('click',() => {
-  lowerOutputValue = '0'
-})
+const calculator = new Calculator(currentOperandTextElement, previousOperandTextElement);
 
+numberButton.forEach((button) => {
+  button.addEventListener('click', () => {
+    console.log(calculator.operand)
+    calculator.appendNumber(button.innerText);
+    calculator.updateDisplay();
+  })
+})
