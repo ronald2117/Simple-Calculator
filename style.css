@@ -35,14 +35,16 @@ body {
 #output{
   grid-column-start: 1;
   grid-column-end: 5;
-  text-align: end;
   padding: 15px;
   display: flex;
+  text-align: end;
   flex-direction: column;
   justify-content: space-around;
 }
 #upper-output{
-  font-size: 130%
+  font-size: 130%;
+  overflow: hidden;
+  text-overflow: scroll;
 }
 #lower-output{
   font-weight: bold;
@@ -57,4 +59,7 @@ body {
   grid-column-start: 3;
   grid-column-end: 5;
   background-color: skyblue;
+}
+#copyright{
+  text-align: center;
 }
