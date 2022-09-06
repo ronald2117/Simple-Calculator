@@ -20,7 +20,7 @@ numberButton.forEach((button) => {
 })
 operatorButton.forEach((button) => {
   button.addEventListener('click', () => {
-    if(currentOperand == '' && button.innerText == "-" && !currentOperand.includes("-")) {
+    if(currentOperand == '' && button.innerText == "-" && !currentOperand.includes("-") && previousOperand >= 0) {
       appendNumber("-");
       updateDisplay();
       return
