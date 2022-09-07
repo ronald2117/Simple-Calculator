@@ -13,6 +13,7 @@ let currentOperator = undefined;
 
 numberButton.forEach((button) => {
   button.addEventListener('click', () => {
+  if(button.innerText == '0' && currentOperand == "0") return
   if (currentOperand.length == 11) return
   appendNumber(button.innerText)
   updateDisplay();
