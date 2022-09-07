@@ -25,7 +25,7 @@ operatorButton.forEach((button) => {
       updateDisplay();
       return
     }
-    if(currentOperand == '') return
+    if(currentOperand == '' || currentOperand == '-') return
     if(currentOperand != "" && previousOperand != ""){
       previousOperand = ` ${getProduct()}  ${button.innerText}`;
       currentOperand = ""
@@ -45,7 +45,7 @@ pointButton.addEventListener('click', () => {
   updateDisplay()
 })
 equalButton.addEventListener('click', () => {
-  if(currentOperand == ""  || previousOperand == "") return
+  if(currentOperand == ""  || previousOperand == "" || previousOperandTextElement.innerText.includes('=')) return
   previousOperandTextElement.innerText += ` ${currentOperand} =`
   currentOperandTextElement.innerText = getProduct();
   updateDisplay;
@@ -80,8 +80,8 @@ function getProduct(){
       convertedPreviousOperand;
       break;
     case "-":
-      product = convertedCurrentOperand -
-      convertedPreviousOperand;
+      product = convertedPreviousOperand -
+      convertedCurrentOperand;
     break;
     case "×":
       product = convertedCurrentOperand *

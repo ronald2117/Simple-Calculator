@@ -49,6 +49,8 @@ body {
 #lower-output{
   font-weight: bold;
   font-size: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #clear-btn{
   grid-column-start: 1;
