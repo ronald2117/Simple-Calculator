@@ -85,12 +85,12 @@ function getProduct(){
       convertedCurrentOperand * 10) / 10;
     break;
     case "×":
-      product = convertedCurrentOperand *
-      convertedPreviousOperand;
+      product = (convertedCurrentOperand * 10 *
+      convertedPreviousOperand * 10) / 10;
       break;
     case "÷":
-      product = convertedPreviousOperand /
-      convertedCurrentOperand;
+      product = (convertedPreviousOperand * 10 /
+      convertedCurrentOperand * 10) / 10;
     break;
     default:
       return
