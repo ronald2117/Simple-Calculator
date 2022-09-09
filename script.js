@@ -86,12 +86,14 @@ function getProduct(){
     break;
     case "×":
       product = (convertedCurrentOperand * 10 *
-      convertedPreviousOperand * 10) / 200;
+      convertedPreviousOperand * 10) / 100;
       break;
     case "÷":
       if(convertedCurrentOperand == 0){
         alert("Can't divide by zero")
-        return
+        clearDisplay()
+        product = ""
+        break;
       }
       product = (convertedPreviousOperand * 10 /
       convertedCurrentOperand * 10) / 100;
