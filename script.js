@@ -86,11 +86,11 @@ function getProduct(){
     break;
     case "×":
       product = (convertedCurrentOperand * 10 *
-      convertedPreviousOperand * 10) / 10;
+      convertedPreviousOperand * 10) / 200;
       break;
     case "÷":
       product = (convertedPreviousOperand * 10 /
-      convertedCurrentOperand * 10) / 10;
+      convertedCurrentOperand * 10) / 100;
     break;
     default:
       return
