@@ -12,7 +12,7 @@ body {
   border-radius: 10px;
   background-color: darkgray;
   margin: auto;
-  margin-top: 25%;
+  margin-top: 15%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 25% 1fr 1fr 1fr 1fr 1fr;
