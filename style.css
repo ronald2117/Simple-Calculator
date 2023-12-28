@@ -1,37 +1,51 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
 #container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#calculator {
   width: 320px;
   height: 450px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: darkgray;
-  margin: auto;
-  margin-top: 15%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 25% 1fr 1fr 1fr 1fr 1fr;
   gap: 10px;
   padding: 20px;
 }
+
 .grid-item {
   background-color: whitesmoke;
   border: 1px solid black;
   border-radius: 5px;
 }
+
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .buttons:active{
   background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 }
+
 #output{
   grid-column-start: 1;
   grid-column-end: 5;
@@ -41,27 +55,32 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
+
 #upper-output{
   font-size: 130%;
   overflow: hidden;
   text-overflow: scroll;
 }
+
 #lower-output{
   font-weight: bold;
   font-size: 35px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 #clear-btn{
   grid-column-start: 1;
   grid-column-end: 3;
   background-color: pink;
 }
+
 #delete-btn{
   grid-column-start: 3;
   grid-column-end: 5;
   background-color: skyblue;
 }
+
 #copyright{
   text-align: center;
 }
