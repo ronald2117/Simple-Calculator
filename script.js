@@ -19,6 +19,7 @@ numberButton.forEach((button) => {
   updateDisplay();
   })
 })
+
 operatorButton.forEach((button) => {
   button.addEventListener('click', () => {
     if(currentOperand == '' && button.innerText == "-" && !currentOperand.includes("-") && previousOperand >= 0) {
@@ -40,17 +41,20 @@ operatorButton.forEach((button) => {
     currentOperator = button.innerText;
   })
 })
+
 pointButton.addEventListener('click', () => {
   if(currentOperand == "" || currentOperand.includes(".")) return
   appendNumber(pointButton.innerText)
   updateDisplay()
 })
+
 equalButton.addEventListener('click', () => {
   if(currentOperand == ""  || previousOperand == "" || previousOperandTextElement.innerText.includes('=')) return
   previousOperandTextElement.innerText += ` ${currentOperand} =`
   currentOperandTextElement.innerText = getProduct();
   updateDisplay;
 })
+
 clearButton.addEventListener('click', clearDisplay)
 deleteButton.addEventListener('click', deleteNumber)
 
@@ -103,3 +107,39 @@ function getProduct(){
   }
   return product
 }
+
+document.addEventListener('keydown', (event) => {
+  if (event.key >= 0 || event.key <= 9) {
+    appendNumber(event.key);
+    updateDisplay();
+  }
+  switch(event.key) {
+    case 'Enter':
+    case '=':
+      equalButton.click();
+      break;
+    case 'Backspace':
+      deleteNumber();
+      break;
+    case 'c':
+      clearButton.click();
+      break;
+    case '.':
+      pointButton.click();
+      break;
+    case '+':
+      document.querySelector('#add-btn').click();
+      break;
+    case '-':
+      document.querySelector('#subtract-btn').click();
+      break;
+    case '*':
+    case '×':
+      document.querySelector('#multiply-btn').click();
+      break;
+    case '/':
+    case '÷':
+      document.querySelector('#divide-btn').click();
+      break;
+  }
+} )
